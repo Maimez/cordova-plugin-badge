@@ -62,9 +62,27 @@
             <activity android:name="de.appplant.cordova.plugin.badge.LaunchActivity"
                       android:theme="@android:style/Theme.Black.NoTitleBar"
                       android:launchMode="singleInstance" />
+            <!--
+             * The badge widget is added to the home screen by a user.
+             * 
+            -->
+            <receiver android:name="com.xz.cordova.plugin.badge.BadgeWidget"
+                      android:label="@string/app_name" >
+                <intent-filter>
+                    <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                </intent-filter>
+
+                <meta-data android:name="android.appwidget.provider"
+                           android:resource="@xml/widget_info" />
+            </receiver>
         </config-file>
+        
+        <resource-file src="src/android/res/layout/widget_layout.xml"  target="res/layout/widget_layout.xml" />
+        <resource-file src="src/android/res/xml/widget_info.xml"       target="res/xml/widget_info.xml" />
+        <resource-file src="src/android/res/drawable/badge_circle.xml" target="res/drawable/badge_circle.xml" />
 
         <source-file src="src/android/Badge.java"          target-dir="src/de/appplant/cordova/plugin/badge" />
         <source-file src="src/android/LaunchActivity.java" target-dir="src/de/appplant/cordova/plugin/badge" />
+        <source-file src="src/android/BadgeWidget.java"    target-dir="src/com/xz/cordova/plugin/badge" />
     </platform>
 </plugin>
