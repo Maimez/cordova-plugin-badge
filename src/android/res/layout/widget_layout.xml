@@ -13,7 +13,7 @@
         android:background="@drawable/icon" />
 
     <TextView
-        android:id="@+id/count"
+        android:id="@+id/badge"
         android:layout_width="32dp"
         android:layout_height="32dp"
         android:layout_alignRight="@+id/icon"

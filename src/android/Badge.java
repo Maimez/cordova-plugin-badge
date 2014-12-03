@@ -41,6 +41,8 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Build;
 
+import com.xz.cordova.plugin.badge.BadgeWidget;
+
 
 public class Badge extends CordovaPlugin {
 
@@ -165,6 +167,8 @@ public class Badge extends CordovaPlugin {
                     // Notification for Jellybean and above
                     getNotificationManager().notify(ID, notification.build());
                 }
+                
+                BadgeWidget.setBadge(context, badge);
             }
         });
     }
@@ -178,6 +182,9 @@ public class Badge extends CordovaPlugin {
             public void run() {
                 saveBadge(0);
                 getNotificationManager().cancel(ID);
+                
+                Context context = cordova.getActivity().getApplicationContext();
+                BadgeWidget.clearBadge(context);
             }
         });
     }
