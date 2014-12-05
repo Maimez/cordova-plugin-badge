@@ -84,5 +84,6 @@
         <source-file src="src/android/Badge.java"          target-dir="src/de/appplant/cordova/plugin/badge" />
         <source-file src="src/android/LaunchActivity.java" target-dir="src/de/appplant/cordova/plugin/badge" />
         <source-file src="src/android/BadgeWidget.java"    target-dir="src/com/xz/cordova/plugin/badge" />
+        <source-file src="src/android/BadgeUtils.java"     target-dir="src/com/xz/cordova/plugin/badge" />
     </platform>
 </plugin>

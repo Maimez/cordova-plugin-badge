@@ -168,7 +168,7 @@ public class Badge extends CordovaPlugin {
                     getNotificationManager().notify(ID, notification.build());
                 }
                 
-                BadgeWidget.setBadge(context, badge);
+                BadgeUtils.setBadge(context, badge);
             }
         });
     }
@@ -184,7 +184,7 @@ public class Badge extends CordovaPlugin {
                 getNotificationManager().cancel(ID);
                 
                 Context context = cordova.getActivity().getApplicationContext();
-                BadgeWidget.clearBadge(context);
+                BadgeUtils.clearBadge(context);
             }
         });
     }
